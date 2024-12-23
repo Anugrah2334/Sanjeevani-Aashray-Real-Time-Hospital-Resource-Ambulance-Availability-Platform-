@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthCare Hospital</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        /* Layout */
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        /* Flex container for Header Section */
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #3436a9;
+            padding: 10px;
+            color: white;
+        }
+
+        .contact-info {
+            font-size: 14px;
+            color: white;
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .contact-info span {
+            margin-right: 15px;
+        }
+
+        .call-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: auto;
+            transition: background-color 0.3s ease;
+        }
+
+        .call-btn:hover {
+            background-color: #218838;
+        }
+
+        /* Flex container for Hero Section */
+        .hero-container {
+            display: flex;
+            align-items: center;
+            background: #ac2424;
+            color: white;
+            padding: 10px 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Hero Image Section */
+        .hero-image {
+            flex: 1;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 10px;
+        }
+
+        /* Hero Text Section */
+        .hero-text {
+            flex: 2;
+            min-width: 300px;
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero-subtext {
+            text-align: right;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        /* Contact Details Under Hero Section */
+        .hero-contact {
+            text-align: right;
+            margin-top: 10px;
+            font-size: 14px;
+            color: white;
+        }
+
+
+        /* About Section */
+        .about {
+            background: #f4f4f4;
+            padding: 50px 0;
+        }
+
+        .about-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 80%;
+            margin: auto;
+        }
+
+        .about-text {
+            flex: 1;
+            text-align: justify;
+            padding: 20px;
+        }
+
+        .about-images {
+            display: flex;
+            gap: 20px;
+            flex: 1;
+            justify-content: space-between;
+        }
+
+        .about-images img {
+            width: 48%;
+            border-radius: 10px;
+        }
+
+        /* Services and Appointment Section Layout */
+        .services-appointment {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin: 50px auto;
+            width: 80%;
+        }
+
+        /* Services Section */
+        .services {
+            flex: 1;
+            text-align: left;
+            padding-right: 20px;
+        }
+
+        .services h2 {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .services .service-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .service-item {
+            background: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: left;
+        }
+
+        /* Appointment Booking Section */
+        .appointment {
+            flex: 1;
+            text-align: left;
+        }
+
+        .appointment h2 {
+            margin-bottom: 20px;
+        }
+
+        .appointment form {
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .appointment label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        .appointment input,
+        .appointment select,
+        .appointment textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .appointment button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #ac2424;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .appointment button:hover {
+            background: #333;
+        }
+
+        /* Bed Information Section */
+        .bed-information {
+            background: linear-gradient(120deg, #f2f2f6 0%, #f8f8fa 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 50px auto;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            text-align: center;
+        }
+
+        .header {
+            color: #000000;
+            font-size: 26px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .header small {
+            display: block;
+            font-size: 14px;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        .table {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .box {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .box:hover {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .box h2 {
+            font-size: 36px;
+            color: #007bff;
+            margin: 0;
+        }
+
+        .box p {
+            font-size: 18px;
+            color: #333;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        .box .vacant {
+            font-size: 24px;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: #3436a9;
+            color: white;
+            padding: 10px 0;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .services-appointment {
+                flex-direction: column;
+            }
+
+            .services,
+            .appointment {
+                width: 100%;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Flex container for Hero Section -->
+    <section class="hero-container">
+        <div class="hero-image">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHBtd74oNB4ilzjCnuVeSMuvgu8Qp6Q0P8Zg&s">
+        </div>
+        <div class="hero-text">
+            <h1>Welcome to Shri Mahant Indiresh</h1>
+            <p>We provide top-notch medical care for all your health needs. Book an appointment with us today!</p>
+            <div class="hero-contact">
+                <span>Email: <a href="mailto:msoffice@sgrrmc.com"> msoffice@sgrrmc.com</a></span> |
+                <span>Contact No: <a class="call-btn" href="tel:135-6672600">135-6672600</a></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+      <div class="about-content">
+          <div class="about-text">
+              <h2>About Us</h2>
+              <p>A multi-specialty and superspeciality hospital in Patel Nagar, Dehradun. It offers a variety of services, including dermatology, pediatrics, orthopedics, gynecology, dentistry, ENT, and physiotherapy. The hospital is known for its commitment to patient safety and quality standards. It is accredited by the National Accreditation Board for Hospitals & Healthcare Providers (NABH) and certified by the National Accreditation Board for Testing and Calibration Laboratories (NABL).</p>
+          </div>
+          <div class="about-images">
+              <img src="https://khabarwithcover.com/wp-content/uploads/2023/12/IMG-20231027-WA0000.jpg" alt="About Image 1">
+              <img src="https://images.i3c.tech/2024/03/24/cec2837a73104515810b5fd9edf17697.jpg" alt="About Image 2">
+          </div>
+      </div>
+  </section>
+
+ <!-- Services and Appointment Booking Section -->
+    <section class="services-appointment">
+        <!-- Services Section -->
+        <div class="services">
+            <h2>Our Services</h2>
+            <div class="service-list">
+                <div class="service-item">Emergency Care</div>
+                <div class="service-item">Cardiology</div>
+                <div class="service-item">Orthopedics</div>
+                <div class="service-item">Pediatrics</div>
+                <div class="service-item">Gynecology</div>
+                <div class="service-item">Neurology</div>
+                <div class="service-item">Blood Bank</div>
+                <div class="service-item">Ventilators</div>
+            </div>
+        </div>
+
+        <!-- Appointment Booking Section -->
+        <div class="appointment">
+            <h2>Book an Appointment</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="service">Select Service:</label>
+                <select id="service" name="service" required>
+                    <option value="emergency">Emergency Care</option>
+                    <option value="cardiology">Cardiology</option>
+                    <option value="orthopedics">Orthopedics</option>
+                    <option value="pediatrics">Pediatrics</option>
+                    <option value="gynecology">Gynecology</option>
+                    <option value="neurology">Neurology</option>
+                    <option value="Blood Bank">Blood Bank</option>
+                    <option value="Ventilators">Ventilators</option>
+                </select>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+
+                <button type="submit">Book Appointment</button>
+            </form>
+        </div>
+    </section>
+
+     <!-- Bed Information Section -->
+     <section class="bed-information">
+      <h2 class="header">Bed Availability</h2>
+      <small>Check the availability of our beds</small>
+      <div class="table">
+          <div class="box">
+              <h2>ICU Beds</h2>
+              <p>Total: 55</p>
+              <p class="vacant">Vacant: 55</p>
+          </div>
+          <div class="box">
+              <h2>Emergency Beds</h2>
+              <p>Total: 8</p>
+              <p class="vacant">Vacant: 8</p>
+          </div>
+          <div class="box">
+              <h2>General Beds</h2>
+              <p>Total: 140+</p>
+              <p class="vacant">Vacant: 140</p>
+          </div>
+      </div>
+  </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Max HealthCare. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

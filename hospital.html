@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOSPITALS</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Basic Styles */
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body {
+            padding-top: 100px; /* Add padding to prevent content from hiding under the header */
+            justify-content: space-between;
+        }
+
+        /* Header */
+        header {
+            background-color: #ff6f00; /* Consistent background color with the footer */
+            padding: 15px 0; /* Centered padding */
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center align the content */
+            color: white;
+            position: fixed; /* Set position to fixed */
+            top: 0; /* Align header to the top */
+            left: 0; /* Ensure header spans the full width */
+            width: 100%; /* Make sure the header covers full width */
+            z-index: 1000; /* Ensure it stays above other content */
+        }
+
+        .title {
+            text-align: center;
+            flex-grow: 1; /* Allow title to grow and center */
+        }
+
+        .title h1 {
+            font-size: 28px; /* Increased font size */
+            margin: 0;
+        }
+
+        /* Featured Hospitals Heading */
+        h3 {
+            font-size: 1.75rem; /* Adjust font size */
+            margin: 2rem 0 1rem;
+            text-align: center; /* Center align the heading */
+            color: #ff6f00; /* Change color to orange */
+        }
+
+        /* Hospitals Section */
+        .hospitals {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .hospitals {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .hospital {
+            background-color: #ffffff;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+            transition: all 0.3s ease;
+            position: relative; /* Allow absolute positioning of child elements */
+            overflow: hidden; /* Hide overflow */
+            aspect-ratio: 1; /* Make the hospital entry square */
+        }
+
+        .hospital:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .hospital img {
+            width: 70%; /* Default size of the image */
+            height: 70%;
+            object-fit: cover; /* Ensures the image fills the space without distortion */
+            margin-bottom: 1.5rem;
+            border-radius: 5px;
+        }
+
+        /* Smaller Image Class */
+        .hospital.small img {
+            width: 80%; /* Make the image smaller */
+            height: auto; /* Maintain aspect ratio */
+            object-fit: contain; /* Keep the original aspect ratio without cropping */
+        }
+
+        .hospital h4 {
+            margin-bottom: 0.5rem;
+            color: #005952; /* Hospital title color */
+        }
+
+        .hospital a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #1abc9c; /* Link color */
+            transition: color 0.3s;
+        }
+
+        .hospital a:hover {
+            color: #0e6e68; /* Hover link color */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #ff6f00; /* Changed footer background color */
+            color: white; /* Changed footer text color to white */
+            text-align: center;
+            padding: 10px; /* Adjusted padding */
+            position: fixed; /* Set position to fixed */
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            z-index: 1000; /* Ensure it stays on top of other content */
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: white; /* Match social icons to footer text color */
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #1abc9c; /* Hover social icons color */
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="title">
+                <h1>Hospitals</h1>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h3>Our Featured Hospitals</h3>
+        <div class="hospitals">
+            <div class="hospital">
+                <a href="arihant.html">
+                    <img src="https://i.pinimg.com/564x/1b/ad/e8/1bade8ffd29d7a6b4650284b77fb9d7c.jpg" alt="Arihant Hospital">
+                    <h4>Arihant Hospital</h4>
+                </a>
+            </div>
+            <div class="hospital small">
+                <a href="Bhandari.html">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGFF1YIa1uExjCv_zH8zFf68lbaJyHmva7-xEZCoxd5KIVwZTUaY43O4YRJmCmTHr7T6M&usqp=CAU" alt="Bhandari Hospital">
+                    <h4>Bhandari Hospital</h4>
+                </a>
+            </div>
+            <div class="hospital">
+                <a href="CMI.html">
+                    <img src="https://media.licdn.com/dms/image/v2/C510BAQGV_EKGsuNG9g/company-logo_200_200/company-logo_200_200/0/1631422322124?e=1737590400&v=beta&t=yBCgO76wEutRjAYquwmiv-vk2xjiJPfU_OBeprw6BU4" alt="CMI Private Hospital">
+                    <h4>CMI Private Hospital</h4>
+                </a>
+            </div>
+            <div class="hospital small">
+                <a href="Doon.html">
+                    <img src="https://scontent.fdel1-3.fna.fbcdn.net/v/t1.6435-9/51103711_2578591135490512_5773041958335283200_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=25d718&_nc_ohc=6fn6ZYLWuh8Q7kNvgEKH5EK&_nc_ht=scontent.fdel1-3.fna&_nc_gid=Ac-NzfUU-tKqc7WD4okFoL9&oh=00_AYCYtJV-BS2oBoifleApOwT5vIHLqeRrMzhwBaC2Qwridg&oe=672992AA" alt="Doon Hospital">
+                    <h4>Doon Hospital</h4>
+                </a>
+            </div>
+            <div class="hospital">
+                <a href="gandhihospital.html">
+                    <img src="https://scontent.fdel27-1.fna.fbcdn.net/v/t39.30808-6/244245598_242651617875374_4422768029352545960_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=TXhmC2mNuC0Q7kNvgH_-S3F&_nc_zt=23&_nc_ht=scontent.fdel27-1.fna&_nc_gid=A5UWEeMK2cCp9wkMb6jFdEf&oh=00_AYCiKclhAfsMhLLbpw_l_BeCLiTaflih530-pHHze8b1_g&oe=671AC853" alt="Gandhi Hospital">
+                    <h4>Gandhi Hospital</h4>
+                </a>
+            </div>
+            <div class="hospital small">
+                <a href="hariramkohli.html">
+                    <img src="https://scontent.fdel27-4.fna.fbcdn.net/v/t39.30808-6/291806980_422606486547477_7140781711960372707_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=Xv_iBJROi7IQ7kNvgER6eMC&_nc_zt=23&_nc_ht=scontent.fdel27-4.fna&_nc_gid=AP04eJT_KGkEkk9xG1JojZj&oh=00_AYCfYuZanO2fyDBdpK4ZbOBZIz68lK3ZykShxX0EMTn2Yg&oe=671AD714" alt="Hari Ram Kohli Memorial Hospital">
+                    <h4>Hari Ram Memorial Hospital</h4>
+                </a>
+            </div>
+            <div class="hospital">
+                <a href="kanishk.html">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUsHA8AnjtvqpM9lU8LVyQEzTmQHAppi3XPg&s" alt="Kanishk Private Hospital">
+                    <h4>Kanishk Private Hospital</h4>
+                </a>
+            </div>
+            <div class="hospital">
+                <a href="MahatmaGandhi.html">
+                    <img src="data:image/jpeg;base64,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">
+                    <h4>Mahatma Gandhi Hospital</h4>
+                </a>
+            </div>
+            <div class="hospital">
+                <a href="Max.html">
+                    <img src="https://pbs.twimg.com/profile_images/1559387616730284033/udo24_2T_400x400.jpg" alt="Max Healthcare">
+                    <h4>Max Healthcare Hospital</h4>
+                </a>
+            </div>
+            <div class="hospital">
+                <a href="Indiresh.html">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHBtd74oNB4ilzjCnuVeSMuvgu8Qp6Q0P8Zg&s">
+                    <h4>Shri Mahant Indiresh Hospital</h4>
+                </a>
+            </div>
+            <div class="hospital">
+                <a href="Synergy.php">
+                    <img src="https://scontent.fdel27-4.fna.fbcdn.net/v/t39.30808-6/279242143_370001905166823_2507660170690484532_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=Oks9ZCZygEgQ7kNvgEKQMh-&_nc_zt=23&_nc_ht=scontent.fdel27-4.fna&_nc_gid=APk0k56jX1hKIiUShh2yT2R&oh=00_AYDofB6CsR81Jv7tiLCoMq3AsRGuE1QRyiK5IspsLi8tgA&oe=6718A16C">
+                    <h4>Synergy Hospital</h4>
+                </a>
+            </div>
+            <div class="hospital">
+                <a href="VelMed.html">
+                    <img src="https://scontent.fdel27-6.fna.fbcdn.net/v/t39.30808-6/294023181_415300653952764_3443186991552987808_n.png?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=8rYSbmTleWkQ7kNvgGSEK9B&_nc_zt=23&_nc_ht=scontent.fdel27-6.fna&_nc_gid=AFCpvApmH7U4srzLGFiTzxm&oh=00_AYAXqnEGlyWaC9N4PpnO4RAVV2HsLf45U8uBAUTcfsEQnA&oe=67186C2F" alt="The Cradle">
+                    <h4>VelMed</h4>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Sanjeevani Aashray. All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>

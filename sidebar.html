@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanjeevani Aashray Portal</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        header {
+            background-color: #ff6f00;
+            padding: 15px 20px; /* Increased padding for header size */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+            position: relative;
+        }
+
+        .logo img {
+            height: 80px;
+            width: auto;
+        }
+
+        .title {
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .title h1 {
+            font-size: 28px; /* Increased font size */
+            margin: 0;
+        }
+
+        .subheading {
+            font-size: 10px;
+            font-style: italic;
+            margin-top: 3px;
+        }
+
+        .nav-login-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .login-btn {
+            padding: 8px 16px;
+            background-color: #ffffff;
+            color: #ff6f00;
+            border: 1px solid #ff6f00;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .login-btn:hover {
+            background-color: #ff6f00;
+            color: white;
+        }
+
+        .cta-button {
+            background-color: #ff6f00;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        /* Article Section */
+        .article {
+            padding: 50px 20px;
+            background-color: #f9f9f9;
+            display: flex; /* Flex to align images and text */
+            align-items: flex-start; /* Align text and images at the top */
+            justify-content: flex-start; /* Align to the left */
+            width: 100%; /* Full width */
+            margin: 0; /* No margin */
+        }
+
+        .article h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #ff6f00;
+        }
+
+        .article p {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 600px; /* Limiting the width of the text */
+            color: #555;
+            text-align: justify; /* Justify text */
+        }
+
+        .image-container {
+            display: flex; /* Flexbox for images */
+            justify-content: flex-end; /* Align images to the right */
+            flex-grow: 1; /* Allow image container to fill remaining space */
+        }
+
+        .article img {
+            max-width: 320px; /* Adjusted size for both images */
+            width: 100%; /* Responsive */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 0; /* No margin to eliminate gap */
+        }
+
+        /* Blog Section */
+        .blogs {
+            padding: 50px 20px;
+            background-color: #fff;
+        }
+
+        .blogs h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #ff6f00;
+        }
+
+        .blog-posts {
+            display: grid; /* Grid layout for blog posts */
+            grid-template-columns: repeat(3, 1fr); /* 3 columns */
+            gap: 20px; /* Space between grid items */
+        }
+
+        .blog-post {
+            background-color: #f9f9f9; /* Background color for each blog post */
+            padding: 15px; /* Padding around each blog post */
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex; /* Flexbox for blog section */
+            flex-direction: column; /* Stack content vertically */
+            align-items: flex-start; /* Align text and images at the top */
+        }
+
+        .blog-text {
+            flex-grow: 1; /* Allow text to grow and fill space */
+            margin-bottom: 10px; /* Space between text and image */
+        }
+
+        .blog-text h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .blog-text p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.5;
+            text-align: justify; /* Justify text */
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 10px;
+            color: #ff6f00;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* SERVICES Section */
+        .services {
+            padding: 50px 20px;
+            background-color: #f9f9f9; /* Light background color */
+        }
+
+        .services h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #ff6f00;
+        }
+
+        .service-items {
+            display: grid; /* Grid layout */
+            grid-template-columns: repeat(3, 1fr); /* 3 columns */
+            gap: 20px; /* Space between items */
+        }
+
+        .service-item {
+            background-color: #fff; /* White background for each service item */
+            padding: 20px; /* Padding for spacing */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+            text-align: center;
+        }
+
+        .service-item img 
+        {
+     width: 100%; /* Make images responsive to the container */
+     height: 200px; /* Set a fixed height */
+     object-fit: cover; /* Ensures the image covers the area without distortion */
+     border-radius: 8px; /* Add rounded corners if desired */
+       }
+
+
+        .service-item h3 {
+            margin-top: 15px; /* Space between image and title */
+            font-size: 18px;
+            color: #333;
+        }
+
+        footer {
+            background-color: #ff6f00;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="LOGO.jpg" alt="Sanjeevani Aashray Logo"> <!-- Insert the logo image -->
+    </div>
+    <div class="title">
+        <h1>SANJEEVANI AASHRAY</h1>
+        <div class="subheading">Aapki Emergency, Hamara Prathmikta</div>
+    </div>
+    <div class="nav-login-wrapper">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <a href="login_page.html">
+            <button class="login-btn">Login</button>
+        </a>
+    </div>
+</header>
+
+<!-- Article Section about Sanjeevani Aashray Portal -->
+<section class="article">
+    <!-- Left-aligned text -->
+    <div class="text">
+        <h2>About Us</h2>
+        <p>
+            Sanjeevani Aashray is an innovative platform dedicated to connecting patients with hospitals during emergencies, ensuring real-time availability of critical medical resources. Our mission is to simplify access to immediate medical assistance, optimize healthcare resource utilization, and enhance the overall emergency response experience. By leveraging advanced technology, we aim to bridge the gap between patients and healthcare providers effectively. Our platform not only facilitates quick decision-making for patients and their families but also empowers healthcare facilities to manage resources efficiently.
+        </p>
+    </div>
+
+    <!-- Right-aligned images -->
+    <div class="image-container">
+        <img src="SIDE.png" alt="Healthcare Image"> <!-- First Image -->
+        <img src="AMBULANCE.png" alt="Healthcare Image 2"> <!-- Second Image -->
+    </div>
+</section>
+
+<!-- Blogs Section -->
+<section class="blogs">
+    <h2>Latest Blogs</h2>
+    <div class="blog-posts">
+        <div class="blog-post">
+            <div class="blog-text">
+                <h3>What to Do in a Health Emergency: A Step-by-Step Guide</h3>
+                <p>By Jane Doe | Oct 1, 2024</p>
+                <p>In the event of a health emergency, knowing what actions to take can be crucial. This guide outlines the immediate steps to ensure safety and effective care.</p>
+                <a href="blog1.html" class="read-more">Read more</a>
+            </div>
+        </div>
+
+        <div class="blog-post">
+            <div class="blog-text">
+                <h3>Emergency Response: What You Need to Know</h3>
+                <p>By John Smith | Sep 28, 2024</p>
+                <p>Understanding the appropriate response during a health emergency can save lives. Learn about key protocols and procedures to follow in critical situations.</p>
+                <a href="blog2.html" class="read-more">Read more</a>
+            </div>
+        </div>
+
+        <div class="blog-post">
+            <div class="blog-text">
+                <h3>Government Policies for Emergency Healthcare Support</h3>
+                <p>By Sarah Lee | Sep 25, 2024</p>
+                <p>Discover the various government policies and initiatives in place to provide support and resources during health emergencies.</p>
+                <a href="blog3.html" class="read-more">Read more</a>
+            </div>
+        </div>
+
+        <div class="blog-post">
+            <div class="blog-text">
+                <h3>Preparing for Health Emergencies at Home</h3>
+                <p>By Alex Brown | Oct 2, 2024</p>
+                <p>Health emergencies can occur at home, and being prepared can save lives. Learn essential steps to take to prepare your home for health emergencies.</p>
+                <a href="blog4.html" class="read-more">Read more</a>
+            </div>
+        </div>
+
+        <div class="blog-post">
+            <div class="blog-text">
+                <h3>The Role of Community in Emergency Preparedness</h3>
+                <p>By Emily White | Oct 3, 2024</p>
+                <p>Community plays a vital role in emergency preparedness. Discover how community involvement can enhance responses during health crises.</p>
+                <a href="blog5.html" class="read-more">Read more</a>
+            </div>
+        </div>
+
+        <div class="blog-post">
+            <div class="blog-text">
+                <h3>Mental Health Considerations in Health Emergencies</h3>
+                <p>By David Green | Oct 4, 2024</p>
+                <p>Health emergencies can impact mental well-being. Explore the mental health considerations to keep in mind during health crises.</p>
+                <a href="blog6.html" class="read-more">Read more</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- SERVICES Section -->
+<section class="services">
+    <h2>Our Services</h2>
+    <div class="service-items">
+        <div class="service-item">
+            <img src="icu.jpeg" alt="ICU Facility">
+            <h3>ICU Facility</h3>
+        </div>
+        <div class="service-item">
+            <img src="emergency care.jpeg" alt="Emergency Care">
+            <h3>Emergency Care</h3>
+        </div>
+        <div class="service-item">
+            <img src="ambulance.jpeg" alt="Ambulance Service">
+            <h3>Ambulance </h3>
+        </div>
+        <div class="service-item">
+            <img src="blood bank.png" alt="Surgery Support">
+            <h3>Blood Bank</h3>
+        </div>
+        <div class="service-item">
+            <img src="oxygenn.jpeg" alt="">
+            <h3>Oxygen Supply</h3>
+        </div>
+        <div class="service-item">
+            <img src="beds.jpeg" alt="">
+            <h3>Beds</h3>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Sanjeevani Aashray. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
